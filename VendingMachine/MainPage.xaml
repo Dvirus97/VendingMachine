@@ -1,0 +1,96 @@
+﻿<Page
+    x:Class="VendingMachine.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:VendingMachine"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" 
+    FontFamily="Comic Sans MS"
+    >
+    <Page.Background>
+        <ImageBrush ImageSource="/Assets/backgound.png"/>
+    </Page.Background>
+
+
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="6*"/>
+            <ColumnDefinition Width="5*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2.2*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+        <Button x:Name="ReStockBtn" Grid.Row="1" Grid.Column="3" FontSize="30"
+                    HorizontalAlignment="Left" VerticalAlignment="Bottom" 
+                    Tapped="ReStockBtn_Tapped" Background="Black" >ReStock</Button>
+        <TextBox x:Name="payTbx" Grid.Column="2" Grid.Row="1" FontSize="40"
+                    HorizontalAlignment="Left" VerticalAlignment="Center"
+                 PlaceholderText="MONEY"></TextBox>
+        <Grid x:Name="buttonGrid" Grid.Column="1" Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="3*"/>
+                <!--<RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>-->
+                <!--
+                <RowDefinition/>
+                <RowDefinition/> 
+                -->
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <!--<Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>-->
+            <!--<Button x:Name="coffeeBtn" Grid.Row="1" Grid.Column="0" FontSize="30"
+                    HorizontalAlignment="Center" VerticalAlignment="Center" 
+                    Tapped="Btn_Tapped" Tag="0">Coffee</Button>
+            <Button x:Name="teaBtn" Grid.Row="2" Grid.Column="0" FontSize="30"
+                    HorizontalAlignment="Center" VerticalAlignment="Center" 
+                    Tapped="Btn_Tapped" Tag="1">Tea</Button>
+            <Button x:Name="chocolateBtn" Grid.Row="3" Grid.Column="0" FontSize="30"
+                    HorizontalAlignment="Center" VerticalAlignment="Center" 
+                    Tapped="Btn_Tapped" Tag="2">Hot chocolate</Button>-->
+
+
+
+        </Grid>
+        <Grid Grid.Column="1" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="4*"/>
+            </Grid.RowDefinitions>
+            <TextBlock  Grid.Row="0" FontSize="30" TextWrapping="WrapWholeWords" 
+                   HorizontalAlignment="Left" VerticalAlignment="Bottom"
+                        TextDecorations="Underline"  >Dvirus's Vending Machine ☺</TextBlock>
+            <TextBlock x:Name="ScreenTbl" Grid.Row="1" Grid.Column="1" FontSize="18" TextWrapping="WrapWholeWords" 
+                   Margin="30" >Welcome to my Vending Machine.
+                <LineBreak></LineBreak>Please Choose Something to Drink.
+            </TextBlock>
+            <!--<Button>
+                <StackPanel >
+                    <Image HorizontalAlignment=""></Image>
+                    <TextBlock></TextBlock>
+                </StackPanel>
+
+            </Button>-->
+            <!--  
+            <TextBlock x:Name="ingredientTbl" Grid.Row="1" Grid.Column="1" FontSize="20" TextWrapping="WrapWholeWords" 
+                   Margin="20" >#</TextBlock>
+            -->
+        </Grid>
+    </Grid>
+</Page>
