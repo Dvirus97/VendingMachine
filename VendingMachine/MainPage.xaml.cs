@@ -77,8 +77,8 @@ namespace VendingMachine
                 textBlock.FontSize = 11;
 
                 Button btn1 = new Button();
-                Grid.SetColumn(btn1, i);
-                Grid.SetRow(btn1, 0);
+                Grid.SetColumn(btn1, 0);
+                Grid.SetRow(btn1, i);
                 stackPanel.HorizontalAlignment = HorizontalAlignment.Stretch;
                 stackPanel.VerticalAlignment = VerticalAlignment.Stretch;
                 btn1.HorizontalAlignment = HorizontalAlignment.Stretch;
