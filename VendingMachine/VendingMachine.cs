@@ -30,11 +30,10 @@ namespace VendingMachine
             Beverages = new List<Beverage>();
         }
         /// <summary>
-        /// try to preper a specific beverage.
+        /// preper a specific beverage.
         /// </summary>
         /// <param name="tag">the beverage to preper</param>
-        /// <returns>The drink. 
-        /// <br>if exception => message</br></returns>
+        /// <returns>The drink. </returns>
         public string Prepare(int tag)
         {
             return Beverages[tag].Prepare(this);

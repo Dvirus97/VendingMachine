@@ -11,19 +11,17 @@ namespace VendingMachine
     {
         protected int _chocolatePowder;
 
-        public HotChocolate() : base("Chocolate", 2.0)
+        public HotChocolate(string name, double price) : base(name, price)
         { AddPhotoToBtn(new BitmapImage(new Uri(@"ms-appx:///Assets/choco.jpg"))); }
 
         protected override string AddIngredient(VendingMachine machine)
         {
-            //return $"{machine.UseCups()}\n {machine.UseSugar()}\n  {machine.UseMilk()}\n {UseMyIngrediant(ref _chocolatePowder, "chocolate powder")}. left: {_chocolatePowder}\n";
             return String.Format("{0}\n{1}\n{2}\n{3}\n",
                 machine.UseCups(),
                 machine.UseSugar(),
                 machine.UseMilk(),
                 UseMyIngrediant(ref _chocolatePowder, "Chocolate Powder"));
         }
-
         protected override string AddHotWater()
         {
             return "Add water. 160 ML \n";

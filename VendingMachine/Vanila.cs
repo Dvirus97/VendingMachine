@@ -10,12 +10,11 @@ namespace VendingMachine
     internal class Vanila : Beverage
     {
         int _vanilaStick;
-        public Vanila() : base("vanila", 3)
+        public Vanila(string name, double price) : base(name, price)
         { AddPhotoToBtn(new BitmapImage(new Uri(@"ms-appx:///Assets/vanila.jpg"))); }
 
         protected override string AddIngredient(VendingMachine machine)
         {
-            //return $"{machine.UseCups()}\n {machine.UseSugar()}\n {machine.UseMilk()}\n {UseMyIngrediant(ref _vanilaStick, "vanila stick")}. left: {_vanilaStick}\n";
             return String.Format("{0}\n{1}\n{2}\n{3}\n",
                 machine.UseCups(),
                 machine.UseSugar(),
@@ -25,7 +24,6 @@ namespace VendingMachine
         protected override string AddHotWater()
         {
             return "Add water \n";
-
         }
         protected override string Stirring()
         {

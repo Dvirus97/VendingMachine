@@ -68,26 +68,26 @@ namespace VendingMachine
             for (int i = 0; i < manager.Machine.CountBev; i++)
             {
                 Image photo = new Image();
-                photo.Source = manager.Machine.AddPhotoToBtn(i);// => from machine, bev- prop bitMap
-
-
-                StackPanel stackPanel = new StackPanel();
-                TextBlock textBlock = new TextBlock();
-                textBlock.Text = $"{manager.Machine.listOfBeverage[i].ToString()}";
-                textBlock.FontSize = 11;
-
                 Button btn1 = new Button();
-                Grid.SetColumn(btn1, i);
-                Grid.SetRow(btn1, 0);
+                TextBlock textBlock = new TextBlock();
+                StackPanel stackPanel = new StackPanel();
+
+                photo.Source = manager.Machine.AddPhotoToBtn(i);// => from machine, bev- prop bitMap
+                photo.Height = 30;
+
                 stackPanel.HorizontalAlignment = HorizontalAlignment.Stretch;
                 stackPanel.VerticalAlignment = VerticalAlignment.Stretch;
-                btn1.HorizontalAlignment = HorizontalAlignment.Stretch;
 
-                photo.Height = 30;
-                //btn1.Background = new SolidColorBrush(Colors.Black);
+                textBlock.Text = manager.Machine.listOfBeverage[i].ToString();
+                textBlock.FontSize = 11;
+
+                Grid.SetColumn(btn1, i);
+                Grid.SetRow(btn1, 0);
+                btn1.HorizontalAlignment = HorizontalAlignment.Stretch;
                 btn1.Margin = new Thickness(1);
                 btn1.Tag = i;
                 btn1.Tapped += Btn_Tapped;
+
                 buttonGrid.Children.Add(btn1);
                 btn1.Content = stackPanel;
                 stackPanel.Children.Add(textBlock);

@@ -11,18 +11,16 @@ namespace VendingMachine
     {
         protected int _teaBag;
 
-        public Tea() : base("Tea", 1.0)
+        public Tea(string name, double price) : base(name, price)
         { AddPhotoToBtn(new BitmapImage(new Uri(@"ms-appx:///Assets/tea.jpg"))); }
 
         protected override string AddIngredient(VendingMachine machine)
         {
-            //return $"{machine.UseCups()}\n {machine.UseSugar()}\n {UseMyIngrediant(ref _teaBag, "tea bag")}. left: {_teaBag}\n";
             return String.Format("{0}\n{1}\n{2}\n",
                 machine.UseCups(),
                 machine.UseSugar(),
                 UseMyIngrediant(ref _teaBag, "Tea Bag"));
         }
-
         protected override string AddHotWater()
         {
             return "Add water. 200 ML \n";

@@ -12,27 +12,18 @@ namespace VendingMachine
     {
         protected int _coffeeBean;
 
-        public Coffee() : base("Coffee", 1.5)
+        public Coffee(string name, double price) : base(name, price)
         {
             AddPhotoToBtn(new BitmapImage(new Uri(@"ms-appx:///Assets/coffee.png")));
         }
-
-
         protected override string AddIngredient(VendingMachine machine)
         {
-            //StringBuilder sb = new StringBuilder();
-            //sb.AppendLine(machine.UseCups());
-            //sb.AppendLine(machine.UseSugar());
-            //sb.AppendLine(machine.UseMilk());
-            //sb.AppendLine(UseMyIngrediant(ref _coffeeBean, "coffee beans"));
-
             return String.Format("{0}\n{1}\n{2}\n{3}\n",
                 machine.UseCups(),
                 machine.UseSugar(),
                 machine.UseMilk(),
                 UseMyIngrediant(ref _coffeeBean, "coffee beans"));
         }
-
         protected override string AddHotWater()
         {
             return "Add water. 150 ML\n";
@@ -42,7 +33,6 @@ namespace VendingMachine
         {
             return $"Mix clockwise \n";
         }
-
         public override string ReStockMyIngrediant()
         {
             _coffeeBean = 10;

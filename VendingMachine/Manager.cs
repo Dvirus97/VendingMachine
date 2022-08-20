@@ -12,15 +12,15 @@ namespace VendingMachine
 {
     internal class Manager // orginaize all drinks
     {
-        public VendingMachine Machine { get; set; }
+        public VendingMachine Machine { get; private set; }
 
         public Manager()
         {
             Machine = new VendingMachine();
-            Machine.AddBeverage(new Coffee());
-            Machine.AddBeverage(new Tea());
-            Machine.AddBeverage(new HotChocolate());
-            Machine.AddBeverage(new Vanila());
+            Machine.AddBeverage(new Coffee("Coffee", 1.5));
+            Machine.AddBeverage(new Tea("Tea", 1.0));
+            Machine.AddBeverage(new HotChocolate("Coco", 2.0));
+            Machine.AddBeverage(new Vanila("Vanilla", 3));
         }
 
         /// <summary>
@@ -33,6 +33,12 @@ namespace VendingMachine
             return Machine.ReStockIngredients();
         }
 
+        /// <summary>
+        /// try to pay and preper
+        /// </summary>
+        /// <param name="tag">the beverage to make</param>
+        /// <param name="money">amount of money</param>
+        /// <returns>Confirmation message. if exception => error message</returns>
         public string Preper(int tag, double money)
         {
             try
