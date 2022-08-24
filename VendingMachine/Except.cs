@@ -4,15 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VendingMachine
-{
-    internal class BeverageOutOfingredients : Exception
-    {
-        public override string Message => "There is no more ingredients for this beverage. \nPlease contact the manager";
-    }
-    internal class NotEnoughMoney : Exception
-    {
-        public override string Message => "You Don't Have Enough money. can't continue.";
-    }
+namespace VendingMachine {
+    internal class BeverageOutOfingredientsException : Exception {
+        public BeverageOutOfingredientsException() { }
+        public BeverageOutOfingredientsException(string message) : base(message) { }
 
+    }
+    internal class NotEnoughMoneyException : Exception {
+        public NotEnoughMoneyException() { }
+        public NotEnoughMoneyException(string message) : base(message) { }
+
+    }
 }

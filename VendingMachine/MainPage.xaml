@@ -12,7 +12,6 @@
         <ImageBrush ImageSource="/Assets/backgound.png"/>
     </Page.Background>
 
-
     <Grid >
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="4*"/>
@@ -34,14 +33,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition Height="3*"/>
-                <!--<RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>-->
-                <!--
-                <RowDefinition/>
-                <RowDefinition/> 
-                -->
+
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
@@ -50,23 +42,6 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <!--<Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>-->
-            <!--<Button x:Name="coffeeBtn" Grid.Row="1" Grid.Column="0" FontSize="30"
-                    HorizontalAlignment="Center" VerticalAlignment="Center" 
-                    Tapped="Btn_Tapped" Tag="0">Coffee</Button>
-            <Button x:Name="teaBtn" Grid.Row="2" Grid.Column="0" FontSize="30"
-                    HorizontalAlignment="Center" VerticalAlignment="Center" 
-                    Tapped="Btn_Tapped" Tag="1">Tea</Button>
-            <Button x:Name="chocolateBtn" Grid.Row="3" Grid.Column="0" FontSize="30"
-                    HorizontalAlignment="Center" VerticalAlignment="Center" 
-                    Tapped="Btn_Tapped" Tag="2">Hot chocolate</Button>-->
-
-
-
         </Grid>
         <Grid Grid.Column="1" Grid.Row="1">
             <Grid.RowDefinitions>
@@ -80,17 +55,6 @@
                    Margin="30" >Welcome to my Vending Machine.
                 <LineBreak></LineBreak>Please Choose Something to Drink.
             </TextBlock>
-            <!--<Button>
-                <StackPanel >
-                    <Image HorizontalAlignment=""></Image>
-                    <TextBlock></TextBlock>
-                </StackPanel>
-
-            </Button>-->
-            <!--  
-            <TextBlock x:Name="ingredientTbl" Grid.Row="1" Grid.Column="1" FontSize="20" TextWrapping="WrapWholeWords" 
-                   Margin="20" >#</TextBlock>
-            -->
         </Grid>
     </Grid>
 </Page>

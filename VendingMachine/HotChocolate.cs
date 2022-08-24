@@ -5,34 +5,26 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.UI.Xaml.Media.Imaging;
 
-namespace VendingMachine
-{
-    internal class HotChocolate : Beverage
-    {
+namespace VendingMachine {
+    internal class HotChocolate : Beverage {
         protected int _chocolatePowder;
 
-        public HotChocolate(string name, double price) : base(name, price)
-        { AddPhotoToBtn(new BitmapImage(new Uri(@"ms-appx:///Assets/choco.jpg"))); }
+        public HotChocolate(string name, double price) : base(name, price) { photo = new BitmapImage(new Uri(@"ms-appx:///Assets/choco.jpg")); }
 
-        protected override string AddIngredient(VendingMachine machine)
-        {
+        protected override string AddIngredient(VendingMachine machine) {
             return String.Format("{0}\n{1}\n{2}\n{3}\n",
-                machine.UseCups(),
-                machine.UseSugar(),
-                machine.UseMilk(),
+                machine.UseSharedIngrediensts(Ingredients.Cups),
+                machine.UseSharedIngrediensts(Ingredients.Milk),
+                machine.UseSharedIngrediensts(Ingredients.Sugar),
                 UseMyIngrediant(ref _chocolatePowder, "Chocolate Powder"));
         }
-        protected override string AddHotWater()
-        {
+        protected override string AddHotWater() {
             return "Add water. 160 ML \n";
-
         }
-        protected override string Stirring()
-        {
+        protected override string Stirring() {
             return $"Mix clockwise \n";
         }
-        public override string ReStockMyIngrediant()
-        {
+        public override string ReStockMyIngrediant() {
             _chocolatePowder = 10;
             return $"Refill chocolate powder to 10";
         }

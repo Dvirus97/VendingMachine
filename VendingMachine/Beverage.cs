@@ -8,10 +8,8 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media.Imaging;
 
-namespace VendingMachine
-{
-    internal abstract class Beverage
-    {
+namespace VendingMachine {
+    internal abstract class Beverage {
         public string Name { get; protected set; }
         public double Price { get; protected set; }
         public BitmapImage photo { get; set; }
@@ -20,8 +18,7 @@ namespace VendingMachine
         /// </summary>
         /// <param name="name">name of beverage</param>
         /// <param name="price">price of beverage</param>
-        public Beverage(string name, double price)
-        {
+        public Beverage(string name, double price) {
             Name = name;
             Price = price;
         }
@@ -29,17 +26,13 @@ namespace VendingMachine
         /// add image to specific button. save image prop
         /// </summary>
         /// <param name="photo1">the photo</param>
-        public void AddPhotoToBtn(BitmapImage photo1)
-        {
-            photo = photo1;
-        }
+        /// 
         /// <summary>
         /// AddIngredient, AddHotWater, Stirring
         /// </summary>
         /// <param name="machine">the machine that preaper</param>
         /// <returns></returns>
-        public string Prepare(VendingMachine machine)
-        {
+        public string Prepare(VendingMachine machine) {
             return String.Format("{0}\n{1}{2}{3}",
                this.ToString(),
                AddIngredient(machine),
@@ -56,11 +49,9 @@ namespace VendingMachine
         /// <param name="name">string representing of ingredient</param>
         /// <param name="value">how many you need to use</param>
         /// <returns>Confirmation message</returns>
-        protected string UseMyIngrediant(ref int ingredient, string name, int value = 1)
-        {
-            if (ingredient <= 0)
-            {
-                throw (new BeverageOutOfingredients());
+        protected string UseMyIngrediant(ref int ingredient, string name, int value = 1) {
+            if (ingredient <= 0) {
+                throw (new BeverageOutOfingredientsException($"There is no more {name} for this beverage. \nPlease contact the manager"));
             }
             ingredient -= value;
             return $"use {name}";
@@ -70,12 +61,10 @@ namespace VendingMachine
         /// </summary>
         /// <returns>Confirmation message</returns>
         public abstract string ReStockMyIngrediant();
-        public override string ToString()
-        {
+        public override string ToString() {
             return $"{Name} - {Price:c}";
         }
-        public override bool Equals(object obj)
-        {
+        public override bool Equals(object obj) {
             Beverage other = obj as Beverage;
             if (other == null)
                 return false;
